@@ -4,6 +4,7 @@ import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa";
 import DarkMode from "./DarkMode";
+import Button from "../Button/Button";
 
 const Menu = [
   {
@@ -21,8 +22,8 @@ const Menu = [
     name: "About",
     link: "/#",
   },
- 
-  
+
+
 ];
 
 const DropdownLinks = [
@@ -50,32 +51,39 @@ const Navbar = ({ handleOrderPopup }) => {
       <div className="bg-primary/40 py-2">
         <div className="container flex justify-between items-center">
           <div>
-            <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
-              <img src={Logo} alt="Logo" className="w-10" />
+            <a href="#" className="font-bold font-Manrope text-[43px] sm:text-[43px] flex items-center gap-2">
+              <img src={Logo} alt="Logo" className="w-[26px] h-[33px]" />
               Boldo
             </a>
           </div>
 
           {/* lower Navbar */}
-      <div data-aos="zoom-in" className="flex justify-center">
-        <ul className="sm:flex hidden items-center gap-4">
-          {Menu.map((data) => (
-            <li key={data.id}>
-              <a
-                href={data.link}
-                className="inline-block px-4 hover:text-primary duration-200"
-              >
-                {data.name}
-              </a>
-            </li>
-          ))}
-         
-        </ul>
-      </div>
-          
+          <div data-aos="zoom-in" className="flex justify-center">
+            <ul className="sm:flex hidden items-center gap-4">
+              {Menu.map((data) => (
+                <li key={data.id}>
+                  <a
+                    href={data.link}
+                    className="inline-block text-[16px] font-open-sans font-semibold px-4 hover:text-primary duration-200"
+                  >
+                    {data.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <Button
+              text={'Log In'}
+              textColor={'text-[#0A2640]'}
+              width={'w-[128px]'}
+              height={'h-[40px]'}
+              bgColor={'bg-white'}
+            />
+          </div>
+
+
         </div>
       </div>
-      
+
     </div>
   );
 };

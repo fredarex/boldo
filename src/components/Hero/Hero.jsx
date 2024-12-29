@@ -5,6 +5,7 @@ import Image3 from "../../assets/hero/sale.png";
 import Slider from "react-slick";
 import { hero } from "../../constants/image";
 import Navbar from "../Navbar/Navbar";
+import Button from "../Button/Button";
 
 const ImageList = [
   {
@@ -68,7 +69,7 @@ const Hero = ({ handleOrderPopup }) => {
                   data-aos="fade-up"
                   data-aos-duration="500"
                   data-aos-delay="100"
-                  className="text-[16px] font-[400px]"
+                  className="text-[16px] text-[#F1F1F1] font-[400px]"
                 >
                   Funding handshake buyer business-to-business
                   metrics iPad partnership. First mover advantage
@@ -78,13 +79,22 @@ const Hero = ({ handleOrderPopup }) => {
                   data-aos="fade-up"
                   data-aos-duration="500"
                   data-aos-delay="300"
+                  className="max-w-[480px] mt-3 flex justify-between"
                 >
-                  <button
-                    onClick={handleOrderPopup}
-                    className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full"
-                  >
-                    Order Now
-                  </button>
+                  <Button 
+                    text={'Buy template'} 
+                    textColor={'text-[#0A2640]'} 
+                    width={'w-[250px]'} 
+                    height={'h-[60px]'} 
+                    bgColor={'bg-[#65E4A3]'} 
+                  />
+                  <Button 
+                    text={'Explore'} 
+                    textColor={'text-white'} 
+                    width={'w-[187px]'} 
+                    height={'h-[60px]'} 
+                    borderline={'border border-[#fff]'}
+                  />
                 </div>
               </div>
               {/* image section */}
