@@ -46,10 +46,10 @@ const DropdownLinks = [
 
 const Navbar = ({ handleOrderPopup }) => {
   return (
-    <div className="duration-200 py-[40px] text-white relative z-40">
+    <div className="w-full duration-200 py-[40px] text-white relative z-40">
       {/* upper Navbar */}
-      <div className="bg-primary/40 py-2">
-        <div className="container flex justify-between items-center">
+      <div className=" py-2">
+        <div className="flex justify-between items-center">
           <div>
             <a href="#" className="font-bold font-Manrope text-[43px] sm:text-[43px] flex items-center gap-2">
               <img src={Logo} alt="Logo" className="w-[26px] h-[33px]" />

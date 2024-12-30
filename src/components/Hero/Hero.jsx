@@ -1,35 +1,9 @@
 import React from "react";
-import Image1 from "../../assets/hero/women.png";
-import Image2 from "../../assets/hero/shopping.png";
-import Image3 from "../../assets/hero/sale.png";
-import Slider from "react-slick";
 import { hero } from "../../constants/image";
 import Navbar from "../Navbar/Navbar";
 import Button from "../Button/Button";
 
-const ImageList = [
-  {
-    id: 1,
-    img: Image1,
-    title: "Upto 50% off on all Men's Wear",
-    description:
-      "lorem His Life will forever be Changed dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    id: 2,
-    img: Image2,
-    title: "30% off on all Women's Wear",
-    description:
-      "Who's there lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    id: 3,
-    img: Image3,
-    title: "70% off on all Products Sale",
-    description:
-      "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-];
+
 
 const Hero = ({ handleOrderPopup }) => {
   var settings = {
@@ -46,15 +20,15 @@ const Hero = ({ handleOrderPopup }) => {
   };
 
   return (
-    <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] px-[60px] bg-gray-100 bg-hero-pattern text-white">
+    <div className="w-full relative overflow-hidden px-[60px] bg-cover bg-gray-100 bg-hero-pattern bg-no-repeat text-white">
       <Navbar />
-      <div className=" flex justify-center items-center duration-200 ">
+      <div className=" w-full flex justify-between items-center duration-200 ">
         {/* background pattern */}
         
         {/* hero section */}
         <div className="container pb-8 sm:pb-0">
-          <div className="">
-            <div className="w-full flex flex-col  justify-between sm:flex-row">
+          <div className="w-full">
+            <div className="w-full flex flex-col justify-between sm:flex-row">
               {/* text content section */}
               <div className="sm:w-[550px] mr-[40px] flex flex-col justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1 relative z-10">
                 <h1
@@ -107,7 +81,7 @@ const Hero = ({ handleOrderPopup }) => {
                   <img
                     src={hero}
                     alt=""
-                    className="w-full h-[300px] sm:h-full sm:w-[500px]"
+                    className="w-full h-[300px] sm:h-full sm:w-[400px]"
                   />
                 </div>
               </div>

@@ -1,51 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
+import { FaArrowCircleRight } from "react-icons/fa";
 import Slider from "react-slick";
+import Button from "../Button/Button";
+import { service4 } from "../../constants/image";
+import { IoIosArrowDropdownCircle } from "react-icons/io";
 
 const TestimonialData = [
   {
     id: 1,
-    name: "Victor",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
-    img: "https://picsum.photos/101/101",
+    name: "Albus Dumbledore",
+    text: "“Buyer buzz partner network disruptive non-disclosure agreement business”",
+    img: "https://picsum.photos/seed/people/200/200",
+    work: "Manager @ Howarts"
   },
   {
     id: 2,
-    name: "Satya Nadella",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
-    img: "https://picsum.photos/102/102",
+    name: "Severus Snape",
+    text: "“Learning curve infrastructure value proposition advisor strategy user experience hypotheses investor.”",
+    img: "https://picsum.photos/seed/people/210/210",
+    work: "Manager @ Slytherin"
   },
   {
     id: 3,
-    name: "Virat Kohli",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
-    img: "https://picsum.photos/104/104",
+    name: "Harry Potter",
+    text: "“Release facebook responsive web design business model canvas seed money monetization.”",
+    img: "https://picsum.photos/seed/people/300/300",
+    work: "Team Leader @ Gryffindor"
   },
-  {
-    id: 5,
-    name: "Sachin Tendulkar",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
-    img: "https://picsum.photos/103/103",
-  },
+
 ];
 
+
 const Testimonials = () => {
-  var settings = {
-    dots: true,
-    arrows: false,
+  const [imageIndex, setImageIndex] = useState(0);
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, position: 'absolute', top: -50, display: "block", }}
+        onClick={onClick}
+      >
+
+      </div>
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", fontSize: 40, position: 'absolute', left: '85%', top: -50, display: "block", }}
+        onClick={onClick}
+      />
+    );
+  }
+
+
+
+  let settings = {
+    className: "center",
+    centerMode: true,
     infinite: true,
+    slidesToShow: 3,
     speed: 500,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-    pauseOnHover: true,
-    pauseOnFocus: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    beforeChange: (current, next) => setImageIndex(next),
     responsive: [
       {
         breakpoint: 10000,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
+          // slidesToScroll: 1,
           infinite: true,
         },
       },
@@ -53,7 +81,7 @@ const Testimonials = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          // slidesToScroll: 1,
           initialSlide: 2,
         },
       },
@@ -68,53 +96,78 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="py-10 mb-10">
-      <div className="container">
-        {/* header section */}
-        <div className="text-center mb-10 max-w-[600px] mx-auto">
-          <p data-aos="fade-up" className="text-sm text-primary">
-            What our customers are saying
-          </p>
-          <h1 data-aos="fade-up" className="text-3xl font-bold">
-            Testimonials
-          </h1>
-          <p data-aos="fade-up" className="text-xs text-gray-400">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-            asperiores modi Sit asperiores modi
-          </p>
-        </div>
+    <div>
+      <div className="py-10 px-[20px] sm:px-[60px] mb-10 bg-[#0A2640]">
+        <div className="w-full relative">
+          {/* header <section> */}
+          <div className="text-left mb-10 max-w-[600px]">
+            <p data-aos="fade-up" className="text-[30px] sm:text-[48px] text-white">
+              An enterprise template to ramp up your company website
+            </p>
+          </div>
 
-        {/* Testimonial cards */}
-        <div data-aos="zoom-in">
-          <Slider {...settings}>
-            {TestimonialData.map((data) => (
-              <div className="my-6">
-                <div
-                  key={data.id}
-                  className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-gray-800 bg-primary/10 relative"
-                >
-                  <div className="mb-4">
-                    <img
-                      src={data.img}
-                      alt=""
-                      className="rounded-full w-20 h-20"
-                    />
-                  </div>
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="space-y-3">
-                      <p className="text-xs text-gray-500">{data.text}</p>
-                      <h1 className="text-xl font-bold text-black/80 dark:text-light">
-                        {data.name}
-                      </h1>
+          {/* Testimonial cards */}
+          <div className="slider-container" data-aos="zoom-in text-white">
+            <Slider {...settings}>
+              {TestimonialData.map((data, idx) => (
+                <div className={idx === imageIndex ? 'slide activeSlide' : 'slide'}>
+                  <div
+                    key={data.id}
+                    className="bg-white max-w-[350px] flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-gray-800 bg-primary/10 relative"
+                  >
+
+                    <div className="flex flex-col items-center gap-4 font-open-sans">
+                      <div className="space-y-3">
+                        <p className="text-[16px] md:text-[24px] text-black">{data.text}</p>
+
+                      </div>
+                    </div>
+                    <div className="flex">
+                      <div className="w-[58px]">
+                        <img
+                          src={data.img}
+                          alt=""
+                          className="rounded-full w-full"
+                        />
+                      </div>
+                      <div className="ml-[20px]">
+                        <h1 className="text-[16px] font-bold text-[#0A2640]">
+                          {data.name}
+                        </h1>
+                        <p>{data.work}</p>
+                      </div>
+
                     </div>
                   </div>
-                  <p className="text-black/20 text-9xl font-serif absolute top-0 right-0">
-                    ,,
-                  </p>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
+
+        </div>
+      </div>
+
+      {/*  */}
+      <div>
+        <div className=" rounded-[12px] mx-[20px] md:mx-[60px] mt-[80px] mb-[10px] sm:mb-20 text-white">
+          <img className="w-full" src={service4} />
+        </div>
+
+        <div className="flex flex-col sm:flex-row justify-between mx-[20px] md:mx-[60px]">
+          <h3 data-aos="fade-up" className="max-w-[500px] font-Manrope md:text-[36px]">
+            We connect our customers with the best, and help them keep up-and stay open.
+          </h3>
+
+          <div>
+            <div className="flex pb-2  justify-between items-center border-b border-[#C4C4C4]">
+              <p className="text-[20px] mr-[60px]">We connect our customers with the best?</p>
+              <IoIosArrowDropdownCircle size={28} />
+            </div>
+            <div className="flex mt-[40px]  justify-between pb-2 items-center border-b border-[#C4C4C4]">
+              <p className="text-[20px] mr-[60px]">Android research & development rockstar? </p>
+              <IoIosArrowDropdownCircle size={28} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
