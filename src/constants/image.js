@@ -1,4 +1,5 @@
 import hero from '../assets/hero/hero.svg';
+import heroSlider from '../assets/images/heroslider.png'
 import service1 from '../assets/images/service1.png';
 import service2 from '../assets/images/service2.png';
 import service3 from '../assets/images/service3.png';
@@ -13,6 +14,7 @@ import blog3 from '../assets/images/blog3.png'
 
 export {
     hero,
+    heroSlider,
     service1,
     service2,
     service3,

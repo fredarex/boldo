@@ -8,7 +8,7 @@ import { MdOutlineWbSunny } from "react-icons/md";
 
 const Banner = () => {
   return (
-    <div className="mt-[120px] px-[60px]">
+    <div className="mt-[120px] px-[20px] sm:px-[60px]">
       <div className="">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* image section */}

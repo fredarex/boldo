@@ -1,5 +1,5 @@
 import React from "react";
-import { hero } from "../../constants/image";
+import { hero, heroSlider } from "../../constants/image";
 import Navbar from "../Navbar/Navbar";
 import Button from "../Button/Button";
 
@@ -20,7 +20,7 @@ const Hero = ({ handleOrderPopup }) => {
   };
 
   return (
-    <div className="w-full relative overflow-hidden px-[60px] bg-cover bg-gray-100 bg-hero-pattern bg-no-repeat text-white">
+    <div className="w-full min-h-[100vh]  relative overflow-hidden px-[20px] sm:px-[60px] bg-cover bg-gray-100 bg-hero-pattern bg-no-repeat text-white">
       <Navbar />
       <div className=" w-full flex justify-between items-center duration-200 ">
         {/* background pattern */}
@@ -28,14 +28,14 @@ const Hero = ({ handleOrderPopup }) => {
         {/* hero section */}
         <div className="container pb-8 sm:pb-0">
           <div className="w-full">
-            <div className="w-full flex flex-col justify-between sm:flex-row">
+            <div className="w-full flex flex-col justify-between md:flex-row">
               {/* text content section */}
-              <div className="sm:w-[550px] mr-[40px] flex flex-col justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1 relative z-10">
+              <div className="mr-[40px] flex flex-col justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 md:order-1 relative z-10">
                 <h1
                   data-aos="zoom-out"
                   data-aos-duration="500"
                   data-aos-once="true"
-                  className="text-5xl font-Manrope sm:text-[48px] leading-[72px] font-[400px]"
+                  className="text-[30px] font-Manrope sm:text-[48px] leading-[72px] font-[400px]"
                 >
                   Save time by building  fast with Boldo Template
                 </h1>
@@ -57,8 +57,8 @@ const Hero = ({ handleOrderPopup }) => {
                 >
                   <Button 
                     text={'Buy template'} 
-                    textColor={'text-[#0A2640]'} 
-                    width={'w-[250px]'} 
+                    textColor={'text-[#0A2640] '} 
+                    width={'w-[250px] mr-[20px]'} 
                     height={'h-[60px]'} 
                     bgColor={'bg-[#65E4A3]'} 
                   />
@@ -72,19 +72,22 @@ const Hero = ({ handleOrderPopup }) => {
                 </div>
               </div>
               {/* image section */}
-              <div className="order-1 sm:order-2">
+              <div className="order-1 md:order-2">
                 <div
                   data-aos="zoom-in"
                   data-aos-once="true"
-                  className="relative z-10"
+                  className="relative z-10 w-full  md:h-full md:max-w-[500px]"
                 >
                   <img
                     src={hero}
                     alt=""
-                    className="w-full h-[300px] sm:h-full sm:w-[400px]"
+                    className="w-full "
                   />
                 </div>
               </div>
+            </div>
+            <div className="my-[40px]">
+              <img src={heroSlider} />
             </div>
           </div>
 

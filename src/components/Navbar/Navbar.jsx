@@ -51,7 +51,7 @@ const Navbar = ({ handleOrderPopup }) => {
       <div className=" py-2">
         <div className="flex justify-between items-center">
           <div>
-            <a href="#" className="font-bold font-Manrope text-[43px] sm:text-[43px] flex items-center gap-2">
+            <a href="#" className="font-bold font-Manrope text-[30px] md:text-[43px] flex items-center gap-2">
               <img src={Logo} alt="Logo" className="w-[26px] h-[33px]" />
               Boldo
             </a>
@@ -64,7 +64,7 @@ const Navbar = ({ handleOrderPopup }) => {
                 <li key={data.id}>
                   <a
                     href={data.link}
-                    className="inline-block text-[16px] font-open-sans font-semibold px-4 hover:text-primary duration-200"
+                    className="inline-block text-[16px] font-open-sans font-semibold px-2 md:px-4 hover:text-primary duration-200"
                   >
                     {data.name}
                   </a>

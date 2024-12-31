@@ -32,7 +32,7 @@ const ProductsData = [
 const TopProducts = ({ handleOrderPopup }) => {
   return (
     <div className="w-full">
-      <div className="w-full px-[60px]">
+      <div className="w-full px-[20px] sm:px-[60px]">
         {/* Header section */}
         <div className="w-full mt-[60px] flex flex-col justify-center items-center  text-left mb-24">
           <p data-aos="fade-up" className="text-[20px] text-[#777777] font-open-sans">
